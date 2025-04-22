@@ -1,0 +1,581 @@
+/* ====================
+   Global Styles
+   ==================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    background-color: #2a2a2a;
+    color: #d0d0d0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ====================
+   Navigation Styles
+   ==================== */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 65px;
+    background-color: #211d1d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d0d0d0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f5f5f5;
+}
+
+.left {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* ====================
+   Section Layout Styles
+   ==================== */
+.fullpage-section {
+    height: 100vh;
+    /* Full viewport height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    /* Snaps to this section when scrolling */
+    padding-top: 65px;
+    /* Space for the fixed navbar */
+}
+
+.section-container {
+    max-width: 100%;
+    width: 100%;
+    max-height: calc(100% - 50px);
+    height: calc(100% - 50px);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ====================
+   Hero Section Styles
+   ==================== */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('f1-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.leftsection {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.purple {
+    color: #b0b0b0;
+    display: block;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+}
+
+/* ====================
+   Drivers Section Styles
+   ==================== */
+.drivers-container {
+    /* Container for driver boxes */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.driver-box {
+    flex: 1;
+    width: calc(50% - 10px);
+    min-width: 0;
+    /* Allow boxes to shrink if needed */
+    height: calc(100vh - 100px);
+    background-color: rgba(74, 74, 74, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 40px;
+    color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Background images for driver boxes */
+.left-driver {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('lewis.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.right-driver {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('alonso.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Driver content styles */
+.driver-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 35px;
+    border-radius: 12px;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 100%;
+}
+
+.driver-box h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.driver-box p {
+    font-size: 1.25rem;
+    color: #ffffff;
+    line-height: 1.8;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+}
+
+.driver-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* ====================
+   Single Box Section Styles
+   ==================== */
+.single-box {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 300px;
+    background-color: #4a4a4a;
+    color: #f5f5f5;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.single-box h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #e0e0e0;
+}
+
+.single-box h3 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.single-box p {
+    font-size: 1.1rem;
+    color: #d0d0d0;
+    line-height: 1.6;
+}
+
+/* ====================
+   Section Background Colors
+   ==================== */
+#drivers {
+    background-color: #2a2a2a;
+}
+
+#car {
+    background-color: #252525;
+}
+
+#summary {
+    background-color: #1e1e1e;
+}
+
+#flyingfin {
+    background-color: #181818;
+}
+
+#uptodate {
+    background-color: #141414;
+}
+
+/* ====================
+   Section Background Images
+   ==================== */
+/* Car section background */
+#car .single-box {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('car.webp');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+/* Flying Fin section background */
+#flyingfin .single-box {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('kimi.jpg');
+    background-size: cover;
+    background-position: top center;
+    color: #ffffff;
+}
+
+/* Summary section background */
+#summary .single-box {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('summary.png');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+/* Enhanced text readability for sections with background images */
+#car .single-box h2,
+#flyingfin .single-box h2,
+#summary .single-box h2,
+#car .single-box h3,
+#flyingfin .single-box h3,
+#summary .single-box h3 {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+#car .single-box p,
+#flyingfin .single-box p,
+#summary .single-box p {
+    color: #ffffff;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 15px;
+    backdrop-filter: blur(2px);
+}
+
+/* ====================
+   Race Results Section Styles
+   ==================== */
+/* Compact form layout */
+.race-form-compact {
+    width: 100%;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-group-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-control-compact {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #333;
+    color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    width: 150px;
+}
+
+.btn-compact {
+    padding: 6px 15px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    height: 31px;
+    /* Match the height of the dropdowns */
+}
+
+.btn-compact:hover {
+    background-color: #666;
+}
+
+.btn-compact:active {
+    background-color: #444;
+}
+
+/* Race results container */
+#race-results {
+    margin-top: 15px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#race-title {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #e0e0e0;
+    flex-shrink: 0;
+}
+
+.results-container {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: calc(100% - 50px);
+    padding-right: 5px;
+}
+
+.select-prompt {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+}
+
+/* Results table styling */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #e0e0e0;
+    table-layout: fixed;
+}
+
+.results-table th,
+.results-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+.results-table th {
+    background-color: #333;
+    font-weight: 600;
+}
+
+.results-table tr:hover {
+    background-color: #3a3a3a;
+}
+
+.race-info {
+    margin-top: 25px;
+    line-height: 1.6;
+}
+
+.error {
+    color: #ff6b6b;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    flex-shrink: 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #555;
+    border-radius: 50%;
+    border-top-color: #e0e0e0;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Custom scrollbar styling */
+.results-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 4px;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 4px;
+}
+
+.results-container::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Race section specific layout */
+#uptodate .section-container {
+    height: calc(100% - 80px);
+}
+
+#uptodate .single-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Visual effects */
+.scroll-fade-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(image.jpg) center/cover no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* ====================
+   Responsive Design
+   ==================== */
+/* Large screens adjustments */
+@media screen and (max-width: 1200px) {
+    .driver-box {
+        padding: 30px;
+    }
+
+    .driver-box h2 {
+        font-size: 2.4rem;
+    }
+
+    .driver-box p {
+        font-size: 1.15rem;
+    }
+}
+
+/* Medium screens */
+@media screen and (max-width: 768px) {
+    .drivers-container {
+        flex-direction: column;
+        height: auto;
+        padding: 50px;
+    }
+
+    .driver-box {
+        width: 100%;
+        max-width: 100%;
+        height: 80vh;
+        margin-bottom: 50px;
+    }
+
+    .driver-box:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Small screens */
+@media screen and (max-width: 550px) {
+    .form-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form-control-compact {
+        width: 200px;
+        /* A bit wider on mobile */
+    }
+
+    .btn-compact {
+        width: 200px;
+        /* Match width on mobile */
+    }
+
+    .results-table {
+        font-size: 0.9rem;
+    }
+
+    .results-table th,
+    .results-table td {
+        padding: 8px 10px;
+    }
+}
